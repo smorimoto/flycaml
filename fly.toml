@@ -2,7 +2,7 @@ app = 'flycaml'
 primary_region = 'nrt'
 
 [deploy]
-strategy = "rolling"
+strategy = "bluegreen"
 
 [[vm]]
 cpus = 1
