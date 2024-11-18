@@ -40,3 +40,7 @@ protocol = "http"
 restart_limit = 0
 timeout = "2s"
 tls_skip_verify = false
+
+[experimental]
+auto_rollback = true
+use_zstd = true
