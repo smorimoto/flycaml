@@ -29,7 +29,6 @@ let text =
    sides of the well, and noticed that they were filled with cupboards......"
 
 let () =
-  let stop, signal_stop = Lwt.wait () in
-  Lwt_unix.on_signal Sys.sigint (fun _signal -> Lwt.wakeup_later signal_stop ())
-  |> ignore;
+  let stop, signal = Lwt.wait () in
+  Lwt_unix.on_signal Sys.sigint (fun _ -> Lwt.wakeup_later signal ()) |> ignore;
   Dream.run ~interface:"0.0.0.0" ~stop (fun _ -> Dream.html text)
