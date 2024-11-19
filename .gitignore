@@ -1,3 +1,5 @@
+/.vscode/
 /_build/
 /_opam/
-/.vscode/
+/dev-tools.locks/
+/dune.lock/
