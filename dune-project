@@ -1,4 +1,4 @@
-(lang dune 3.16)
+(lang dune 3.17)
 
 (name flycaml)
 
@@ -17,11 +17,11 @@
  (name flycaml)
  (synopsis "OCaml + Fly.io")
  (depends
-  ocaml
+
   dream
   lwt
   (ocaml-lsp-server :with-dev-setup)
   (ocamlformat
    (and
     :with-dev-setup
-    (= 0.26.2)))))
+    (= 0.27.0)))))
