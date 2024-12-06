@@ -17,7 +17,6 @@
  (name flycaml)
  (synopsis "OCaml + Fly.io")
  (depends
-
   dream
   lwt
   (ocaml-lsp-server :with-dev-setup)
