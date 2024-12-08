@@ -4,8 +4,7 @@ RUN sudo ln -f /usr/bin/opam-2.3 /usr/bin/opam
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   --mount=type=bind,source=flycaml.opam,target=flycaml.opam \
-  opam repository set-url default git+https://github.com/ocaml/opam-repository.git \
-  && opam pin --no-action add flycaml.dev . \
+  opam pin --no-action add flycaml.dev . \
   && opam update --depexts \
   && opam list --depext --resolve flycaml >depexts.txt \
   && opam install --deps-only .
