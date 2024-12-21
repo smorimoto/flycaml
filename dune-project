@@ -1,17 +1,12 @@
 (lang dune 3.17)
-
 (name flycaml)
 
-(license ISC)
-
-(authors "Sora Morimoto <sora@morimoto.io>")
+(generate_opam_files true)
 
 (maintainers "Sora Morimoto <sora@morimoto.io>")
-
-(source
- (github smorimoto/flycaml))
-
-(generate_opam_files true)
+(authors "Sora Morimoto <sora@morimoto.io>")
+(license ISC)
+(source (github smorimoto/flycaml))
 
 (package
  (name flycaml)
@@ -20,7 +15,4 @@
   dream
   lwt
   (ocaml-lsp-server :with-dev-setup)
-  (ocamlformat
-   (and
-    :with-dev-setup
-    (= 0.27.0)))))
+  (ocamlformat (and :with-dev-setup (= 0.27.0)))))
