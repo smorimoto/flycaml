@@ -8,7 +8,7 @@ homepage: "https://github.com/smorimoto/flycaml"
 bug-reports: "https://github.com/smorimoto/flycaml/issues"
 depends: [
   "dune" {>= "3.17"}
-  "dream"
+  "dream" {>= "1.0.0~alpha8"}
   "lwt"
   "ocaml-lsp-server" {with-dev-setup}
   "ocamlformat" {with-dev-setup & = "0.27.0"}
