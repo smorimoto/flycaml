@@ -1,0 +1,7 @@
+{
+  "evenBetterToml.taplo.configFile.path": "taplo.toml",
+  "ocaml.sandbox": {
+    "kind": "custom",
+    "template": "$prog $args"
+  }
+}
