@@ -1,4 +1,4 @@
-FROM ocaml/opam:debian-12-ocaml-5.2-flambda AS build
+FROM ocaml/opam:debian-12-ocaml-5.3-flambda AS build
 WORKDIR /usr/src/flycaml
 RUN sudo ln -f /usr/bin/opam-2.3 /usr/bin/opam
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
