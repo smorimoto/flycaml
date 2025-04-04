@@ -1,4 +1,4 @@
-(lang dune 3.17)
+(lang dune 3.18)
 (name flycaml)
 
 (generate_opam_files true)
