@@ -1,6 +1,7 @@
 FROM ocaml/opam:debian-12-ocaml-5.3-flambda AS build
 WORKDIR /usr/src/flycaml
 RUN sudo ln -f /usr/bin/opam-2.3 /usr/bin/opam
+RUN opam option solver=builtin-0install
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   --mount=type=bind,source=flycaml.opam,target=flycaml.opam \
