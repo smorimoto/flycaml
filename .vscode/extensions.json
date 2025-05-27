@@ -1,3 +1,8 @@
 {
-  "recommendations": ["tamasfe.even-better-toml", "ocamllabs.ocaml-platform"]
+  "recommendations": [
+    "docker.docker",
+    "editorconfig.editorconfig",
+    "ocamllabs.ocaml-platform",
+    "tamasfe.even-better-toml"
+  ]
 }
