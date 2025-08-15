@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 COPY --chown=opam . .
 RUN opam exec -- dune build --profile=release
 
-FROM debian:12-slim
+FROM debian:13-slim
 COPY --from=build /usr/src/flycaml/_build/default/bin/main.exe /usr/bin/flycaml
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
