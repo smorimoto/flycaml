@@ -7,7 +7,7 @@ license: "ISC"
 homepage: "https://github.com/smorimoto/flycaml"
 bug-reports: "https://github.com/smorimoto/flycaml/issues"
 depends: [
-  "dune" {>= "3.18"}
+  "dune" {>= "3.20"}
   "ocaml"
   "dream" {>= "1.0.0~alpha8"}
   "lwt"
