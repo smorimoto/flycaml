@@ -1,4 +1,4 @@
-FROM ocaml/opam:debian-13-ocaml-5.3-flambda AS build
+FROM ocaml/opam:debian-13-ocaml-5.4-flambda AS build
 WORKDIR /usr/src/flycaml
 RUN sudo ln -f /usr/bin/opam-2.4 /usr/bin/opam
 RUN opam option solver=builtin-0install
