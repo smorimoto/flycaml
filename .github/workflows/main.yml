@@ -4,49 +4,73 @@ on:
   - push
   - pull_request
 
-permissions: read-all
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: true
+
+permissions: {}
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
+        uses: ocaml/setup-ocaml@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
         with:
           ocaml-compiler: 5
       - run: opam install . --deps-only
       - run: opam exec -- dune build
 
   lint-fmt:
+    name: Lint fmt
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
+        uses: ocaml/setup-ocaml@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
         with:
           ocaml-compiler: 5
-      - uses: ocaml/setup-ocaml/lint-fmt@v3
+      - uses: ocaml/setup-ocaml/lint-fmt@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
 
   lint-opam:
+    name: Lint opam
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
+        uses: ocaml/setup-ocaml@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
         with:
           ocaml-compiler: 5
-      - uses: ocaml/setup-ocaml/lint-opam@v3
+      - uses: ocaml/setup-ocaml/lint-opam@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
 
   lint-taplo:
+    name: Lint taplo
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Set-up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@9af03b7ae3f9e2ae5c174f659d5c3909f7e7dbac # 2026.07.29.1
       - run: brew install taplo
       - run: taplo lint

@@ -9,18 +9,21 @@ concurrency:
   group: opam-dependency-submission
   cancel-in-progress: true
 
-permissions: read-all
+permissions: {}
 
 jobs:
   opam-dependency-submission:
+    name: Opam Dependency Submission
     permissions:
-      contents: write
+      contents: write # needed to submit dependency graph snapshot
     runs-on: ubuntu-latest
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
+        uses: ocaml/setup-ocaml@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
         with:
           ocaml-compiler: 5
-      - uses: ocaml/setup-ocaml/analysis@v3
+      - uses: ocaml/setup-ocaml/analysis@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
