@@ -23,7 +23,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@f92e0606b7ae4873dd1238465ea4bf6f8e40d85c # v3.7.2
+        uses: ocaml/setup-ocaml@93303b622b2522e4411e295f9e77411a24912ac7 # v3.9.0
         with:
           ocaml-compiler: 5
-      - uses: ocaml/setup-ocaml/analysis@f92e0606b7ae4873dd1238465ea4bf6f8e40d85c # v3.7.2
+      - uses: ocaml/setup-ocaml/analysis@93303b622b2522e4411e295f9e77411a24912ac7 # v3.9.0
